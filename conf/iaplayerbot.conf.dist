@@ -1,0 +1,94 @@
+###############################################################################
+#  mod-iaplayerbot v2.0 — Configuration
+#  Place this file in your server's config directory
+###############################################################################
+
+#
+#  General
+#
+#  Account: the dedicated account ID that holds bot characters.
+#  Create this account and pre-create characters of each class in it.
+#  Use: .account create iabotaccount password
+#  Then note the account ID from auth.account table.
+#
+IABot.Enabled = 1
+IABot.Account = 0
+IABot.MaxBots = 100
+IABot.MaxBotsPerPlayer = 3
+IABot.FollowDistance = 15.0
+
+#
+#  Scheduler (global time-slicing)
+#
+#  CpuBudgetUs: max microseconds per world tick for ALL bots combined
+#  IntervalX: minimum ms between updates per priority level
+#
+IABot.Scheduler.CpuBudgetUs = 5000
+IABot.Scheduler.PriorityRecalcMs = 500
+IABot.Scheduler.IntervalCritical = 50
+IABot.Scheduler.IntervalHigh = 100
+IABot.Scheduler.IntervalMedium = 200
+IABot.Scheduler.IntervalLow = 500
+IABot.Scheduler.IntervalLowest = 1000
+
+#
+#  LOD (Level of Detail) — distance from master in yards
+#
+IABot.LOD.DistanceFull = 30
+IABot.LOD.DistanceReduced = 80
+
+#
+#  Perception cache TTL (milliseconds)
+#
+IABot.Perception.CacheTTLCombat = 100
+IABot.Perception.CacheTTLNormal = 200
+IABot.Perception.CacheTTLFar = 500
+
+#
+#  Decision cache
+#
+IABot.DecisionCache.Enabled = 1
+IABot.DecisionCache.DefaultTTL = 300
+
+#
+#  Intent system update interval (milliseconds)
+#
+IABot.Intent.UpdateInterval = 750
+
+#
+#  Bridge IA (Phi-3 / GPU) — 100% optional
+#
+IABot.Bridge.Enabled = 0
+IABot.Bridge.Endpoint = http://127.0.0.1:8080/v1/advice
+IABot.Bridge.TimeoutMs = 200
+IABot.Bridge.BatchSize = 10
+IABot.Bridge.MinConfidence = 0.6
+
+#
+#  Personality
+#
+IABot.Personality.Enabled = 1
+IABot.Personality.Randomize = 1
+
+#
+#  Social brain
+#
+IABot.Social.Enabled = 0
+IABot.Social.MaxActiveBots = 10
+IABot.Social.TickIntervalMs = 3000
+
+#
+#  Gameplay systems (v3 — disabled by default)
+#
+IABot.Gameplay.EnableQuesting = 0
+IABot.Gameplay.EnableDungeons = 0
+IABot.Gameplay.EnableGathering = 0
+IABot.Gameplay.EnableEconomy = 0
+
+#
+#  Debug
+#
+IABot.Debug = 0
+IABot.Debug.Perf = 0
+IABot.Debug.ShowBT = 0
+IABot.Debug.ShowScheduler = 0
